@@ -1,0 +1,88 @@
+
+public class Hand
+{
+   //initialize our variables
+	public static final int MAX_CARDS = 50;
+	private Card[] myCards = new Card[MAX_CARDS];
+	private int numCards;
+	
+	//default constructor set numCards equal to 0
+	public Hand()
+	{
+		resetHand();	
+	}
+	
+	
+	//Makes our hand (array) empty 
+	public void resetHand()
+	{
+		numCards = 0;
+		myCards = new Card[MAX_CARDS];
+		
+	}
+	
+	
+	//Adds new card to hand when hand is not full
+	public boolean takeCard(Card card)
+	{
+		
+		if (numCards <= MAX_CARDS)
+		{
+			myCards[numCards] = new Card(card.getValue(), card.getSuit());
+			numCards++;
+			return true;
+		}
+		
+		if (numCards >= MAX_CARDS)
+		{
+			return false;	
+		}
+	}
+	
+	
+	//Plays most recent card, removes it from the array as well
+	public Card playCard()
+	{
+		numCards --;
+		Card trackCard = myCards[numCards];
+		myCards[numCards] = null;
+		return trackCard;
+	}
+	
+	
+	
+	public String toString()
+	{
+		String cardInfo = "Hand =(";
+		for (int i = 0; numCards > i; i++)
+		{
+			if (myCards[i] != null)
+			
+		}
+	}
+	
+	
+	//Accessor for numCards returning the number of cards
+	public int getNumCards ()
+	{
+		return numCards;
+	}
+	
+	
+	//Returns individual card from specific location. 
+	public Card inspectCard(int k)
+	{
+		if (k < 0 || k > numCards)
+		{
+			Card invalidCard = new Card();
+			invalidCard.setFlag(true);
+			return invalidCard;
+		}
+		
+		else
+		{
+			return myCards[k];
+		}	
+		
+	}	
+}
