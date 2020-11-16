@@ -33,7 +33,7 @@ public class Hand
 			return true;
 		}
 		
-		if (numCards >= MAX_CARDS)
+		else
 		{
 			return false;	
 		}
@@ -56,7 +56,9 @@ public class Hand
 		String cardInfo = "Hand =(";
 		for (int i = 0; numCards > i; i++)
 		{
-			if (myCards[i] != null)
+			cardInfo += myCards[i].toString();
+			if(i < numCards -1)
+				cardInfo += ",";
 			
 		}
 	}
