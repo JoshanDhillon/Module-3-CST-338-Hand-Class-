@@ -58,8 +58,7 @@ public class Hand
 		{
 			cardInfo += myCards[i].toString();
 			if(i < numCards -1)
-				cardInfo += ",";
-			
+				cardInfo += ",";		
 		}
 	}
 	
@@ -84,7 +83,6 @@ public class Hand
 		else
 		{
 			return myCards[k];
-		}	
-		
+		}		
 	}	
 }
