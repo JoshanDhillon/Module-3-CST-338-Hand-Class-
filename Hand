@@ -60,6 +60,8 @@ public class Hand
 			if(i < numCards -1)
 				cardInfo += ",";		
 		}
+		cardInfo += ",";
+		return cardInfo;
 	}
 	
 	
